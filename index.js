@@ -100,7 +100,7 @@ class Item extends Component {
   }
 
   render() {
-    const { backgroundColor, style, header, visibleImage, invisibleImage, children, touchStyle } = this.props;
+    const { backgroundColor, style, header, visibleImage, invisibleImage, children, touchStyle, contentChild } = this.props;
     const { contentVisible } = this.state;
     return (
       <Animated.View style={[
@@ -134,6 +134,7 @@ class Item extends Component {
           <View
             style={[
               styles.contentChild,
+              contentChild
             ]}
           >
             { children }
