@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
   icons: {
     width: 20,
     height: 20,
-    position: 'absolute',
-    right: 16,
+//     position: 'absolute',
+//     right: 16,
   },
   underline: {
     width: '100%',
@@ -94,7 +94,7 @@ class Item extends Component {
   }
 
   render() {
-    const { backgroundColor, style, header, visibleImage, invisibleImage, children, iconStyle } = this.props;
+    const { backgroundColor, style, header, visibleImage, invisibleImage, children, touchStyle } = this.props;
     const { contentVisible } = this.state;
     return (
       <Animated.View style={[
@@ -111,13 +111,14 @@ class Item extends Component {
         >
           <View
             onLayout={ this.onAnimLayout }
+            style={[styles.headerTouch, touchStyle]}
           >
             { header }
             <Image source={
               contentVisible
                 ? visibleImage
                 : invisibleImage
-            } style={[styles.icons, iconStyle]}/>
+            } style={styles.icons}/>
           </View>
         </TouchableOpacity>
         <View
