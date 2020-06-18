@@ -94,7 +94,7 @@ class Item extends Component {
   }
 
   render() {
-    const { backgroundColor, style, header, visibleImage, invisibleImage, children } = this.props;
+    const { backgroundColor, style, header, visibleImage, invisibleImage, children, iconStyle } = this.props;
     const { contentVisible } = this.state;
     return (
       <Animated.View style={[
@@ -117,7 +117,7 @@ class Item extends Component {
               contentVisible
                 ? visibleImage
                 : invisibleImage
-            } style={styles.icons}/>
+            } style={[styles.icons, iconStyle]}/>
           </View>
         </TouchableOpacity>
         <View
