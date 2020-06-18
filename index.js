@@ -59,6 +59,12 @@ const styles = StyleSheet.create({
     height: 48,
     paddingHorizontal: 12,
   },
+  headerTouch: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  }
 });
 
 class Item extends Component {
